@@ -1,0 +1,147 @@
+/* ===== Bookings Page Styling ===== */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Page Hero Section */
+.page-hero {
+  position: relative;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.page-hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+}
+
+/* Booking Section */
+.booking-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.booking-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form */
+.booking-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-section label {
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.booking-section input:focus,
+.booking-section select:focus,
+.booking-section textarea:focus {
+  border-color: #c8102e; /* Red accent */
+  outline: none;
+}
+
+/* Submit Button */
+.cta-button {
+  background: #c8102e;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #645a5b;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f0ecee;
+  color: #fff;
+}
+
+.cta-section h1 {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.cta-section .cta-button {
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
+}
+
+.cta-section .cta-button:hover {
+  background: #2b3a41;
+}
+
+/* Footer */
+.site-footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0.3rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .booking-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
+

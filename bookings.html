@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings - Swift Shuttle</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleBookings.css">
+  <link rel="icon" href="images/SwiftShuttle.png" type="image/png">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("F8OLlzpDgRM0A3qqA"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="images/SwiftShuttle.png" alt="Swift Shuttle Logo" height="40">
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="bookings.html" class="active">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="page-hero" style="background-image: url('images/bookings-banner.jpg');">
+    <div class="overlay">
+      <h1>Book Your Shuttle</h1>
+      <p>Fast, Reliable & Comfortable Transport</p>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-section">
+    <h2>Get a Quote / Make a Booking</h2>
+    <form id="booking-form">
+
+      <label for="pickup">Pickup Location</label>
+      <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
+
+      <label for="destination">Destination</label>
+      <input type="text" id="destination" name="destination" placeholder="Enter destination address" required>
+
+      <label for="date">Pickup Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Pickup Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="trip">Trip Type</label>
+      <select id="trip" name="trip" required>
+        <option value="One Way">One Way</option>
+        <option value="Return">Return</option>
+      </select>
+
+      <label for="passengers">Number of Passengers</label>
+      <input type="number" id="passengers" name="passengers" min="1" placeholder="e.g. 3" required>
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?"></textarea>
+
+      <button type="submit" class="cta-button">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <p>Need help with your booking?</p>
+    <h1>Contact Swift Shuttle Today</h1>
+    <a href="contact.html" class="cta-button">Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025. Designed by SibisiTech. All rights reserved.</p>
+    <p>📞 079 038 8676 | ✉️ siyandasibisi759@gmail.com</p>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script>
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_rm9df5k", "template_booking", this)
+        .then(function() {
+          alert("✅ Your booking has been sent successfully!");
+          document.getElementById("booking-form").reset();
+        }, function(error) {
+          alert("❌ Failed to send booking. Please try again later.");
+          console.log("EmailJS error:", error);
+        });
+    });
+  </script>
+
+</body>
+</html>
+
+
